@@ -1,0 +1,63 @@
+{
+    "name": "axetools/cachingtrait",
+    "description": "A PHP library to enable static caching on a class",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "cache",
+        "caching",
+        "trait",
+        "class",
+        "classes"
+    ],
+    "autoload": {
+        "psr-4": {
+            "AxeTools\\cachingTrait\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ryan W Howe",
+            "email": "ryanwhowe@gmail.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "AxeTools\\cachingTrait\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "vimeo/psalm": "*"
+    },
+    "scripts": {
+        "analyze": [
+            "@phpstan",
+            "@psalm"
+        ],
+        "phpstan": [
+            "phpstan analyse src/ tests/ --no-progress --memory-limit=1G --level 8"
+        ],
+        "psalm": [
+            "psalm"
+        ],
+        "phpunit": "phpunit --colors=always",
+        "tests": [
+            "@phpstan",
+            "@phpunit"
+        ]
+    },
+    "scripts-descriptions": {
+        "analyze": "Run All project static analysis scripts",
+        "phpstan": "Run PHPStan against the project code on level 8",
+        "psalm": "Run psalm against the project code",
+        "phpunit": "Run PHPUnit tests",
+        "tests": "Run the static analysis and unit tests"
+    }
+}
