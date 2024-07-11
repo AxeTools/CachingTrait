@@ -50,7 +50,7 @@ docker-install: docker-up
 #
 docker-build:
 	@echo "##### Building Production Containers #####"
-	@docker build -f Dockerfile -t axetools_cachingtrait:latest .
+	@docker compose build php
 
 #
 # build and bring up the production containers

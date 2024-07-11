@@ -1,17 +1,14 @@
-FROM php:8.3-fpm-bookworm
+FROM php:8.0-fpm-bullseye
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
     unzip \
     zlib1g-dev \
     libxml2-dev \
     libzip-dev \
-    default-mysql-client \
   && docker-php-ext-install \
     zip \
     intl \
     mysqli \
-    pdo pdo_mysql \
     opcache
 
 RUN yes | pecl install xdebug \

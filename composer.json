@@ -3,6 +3,7 @@
     "description": "A PHP library to enable static caching on a class",
     "type": "library",
     "license": "MIT",
+    "version": "0.0.1",
     "keywords": [
         "cache",
         "caching",
@@ -47,9 +48,10 @@
         "psalm": [
             "psalm"
         ],
-        "phpunit": "phpunit --colors=always",
+        "phpunit": "phpunit --verbose --colors=always",
         "tests": [
             "@phpstan",
+            "@psalm",
             "@phpunit"
         ]
     },

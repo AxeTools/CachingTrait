@@ -1,11 +1,9 @@
 <?php
 
-namespace AxeTools\tests;
+namespace AxeTools\cachingTrait\Test;
 
 use AxeTools\cachingTrait\cachingTrait;
 use AxeTools\cachingTrait\Exceptions\CachingTraitMissingKeyException;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CachingTraitTest extends TestCase
@@ -13,13 +11,13 @@ class CachingTraitTest extends TestCase
     use cachingTrait;
 
     /**
+     * @test
+     * @dataProvider setCacheTestDataProvider
      * @param array<string> $key
      * @param mixed $value
      * @return void
      * @throws CachingTraitMissingKeyException
      */
-    #[Test]
-    #[DataProvider('setCacheTestDataProvider')]
     public function setCacheTest(array $key, $value) {
         self::setCache($key, $value);
         $this->assertTrue(self::hasCache($key));
