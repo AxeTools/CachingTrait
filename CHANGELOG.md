@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning].
 
 - The 2.x branch will be added to support php ^8.0
 
-## 2.0.0
+## 2.0.0 - 2024-07-09
 
 ### Added
 
