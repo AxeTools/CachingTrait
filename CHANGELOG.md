@@ -1,4 +1,4 @@
-# AxeTools/cachingTrait Changelog
+# AxeTools/CachingTrait Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+### Changed
+
 - The 2.x branch will be added to support php ^8.0
 
-## [1.0.0]
+## 1.0.0 - 2024-07-29
 
 ### Added
 
