@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning].
 
 ## Fixed
 
-- version number of `composer.json` corrected to reflect release version
+- version number of `composer.json` corrected to reflect release version ([#5])
 
 
 ## 1.0.0 - 2024-07-29
@@ -33,3 +33,4 @@ and this project adheres to [Semantic Versioning].
 [Keep a Changelog]:http://keepachangelog.com/en/1.1.0/
 [Semantic Versioning]:http://semver.org/spec/v2.0.0.html
 [#2]:https://github.com/AxeTools/CachingTrait/pull/2
+[#5]:https://github.com/AxeTools/CachingTrait/pull/5
