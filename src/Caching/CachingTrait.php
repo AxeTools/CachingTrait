@@ -2,7 +2,7 @@
 
 namespace AxeTools\Traits\Caching;
 
-use AxeTools\Traits\Caching\Exceptions\CachingTraitMissingKeyException;
+use AxeTools\Traits\Caching\Exception;
 
 /**
  * The CachingTrait adds both an internal static cache to the class and a set of methods for caching, checking,
@@ -39,14 +39,16 @@ trait CachingTrait {
     }
 
     /**
+     * Get the data that is stored in the cache array under the key value.
+     *
      * @param array<string> $key
      *
      * @return mixed
-     * @throws CachingTraitMissingKeyException if provided key has no cache value
+     * @throws Exception\CachingTraitMissingKeyException if provided key is not set in the cache array
      */
     protected static function getCache(array $key) {
         if (self::hasCache($key)) return self::$_cache[self::generateKey($key)];
-        throw new CachingTraitMissingKeyException(self::generateKey($key));
+        throw new Exception\CachingTraitMissingKeyException(self::generateKey($key));
     }
 
     /**
@@ -72,18 +74,18 @@ trait CachingTrait {
     }
 
     /**
-     * Clear the class cache
+     * Clear the class cache, either a single key position or the entire cache array
      *
      * @param null|array<string> $key optional key to clear from the cache, if omitted the entire cache is cleared
      *
      * @return void
-     * @throws CachingTraitMissingKeyException if provided key is not set in the cache
+     * @throws Exception\CachingTraitMissingKeyException if provided key is not set in the cache array
      */
     protected static function clearCache(array $key = null) {
         if(null === $key) {
             self::$_cache = [];
         } else {
-            if(!self::hasCache($key)) throw new CachingTraitMissingKeyException(self::generateKey($key));
+            if(!self::hasCache($key)) throw new Exception\CachingTraitMissingKeyException(self::generateKey($key));
             unset(self::$_cache[self::generateKey($key)]);
         }
     }

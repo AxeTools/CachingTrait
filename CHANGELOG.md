@@ -2,8 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog]
+and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
@@ -13,10 +13,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Initial Release 1.0.0 ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- Initial Release 1.0.0 ([#2])
 - Support for php ^7.0
-- `CacheTrait::setCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
-- `CacheTrait::getCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
-- `CacheTrait::hasCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
-- `CacheTrait::generateKey()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
-- `CacheTrait::clearCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- `CacheTrait::setCache()` static method ([#2])
+- `CacheTrait::getCache()` static method ([#2])
+- `CacheTrait::hasCache()` static method ([#2])
+- `CacheTrait::generateKey()` static method ([#2])
+- `CacheTrait::clearCache()` static method ([#2])
+
+[Keep a Changelog]:http://keepachangelog.com/en/1.1.0/
+[Semantic Versioning]:http://semver.org/spec/v2.0.0.html
+[#2]:https://github.com/AxeTools/CachingTrait/pull/2

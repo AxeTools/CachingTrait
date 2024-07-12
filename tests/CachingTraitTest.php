@@ -16,7 +16,7 @@ class CachingTraitTest extends TestCase {
      * @param mixed $value
      *
      * @return void
-     * @throws Caching\Exceptions\CachingTraitMissingKeyException
+     * @throws Caching\Exception\CachingTraitMissingKeyException
      */
     public function setCacheTest(array $key, $value) {
         self::setCache($key, $value);
@@ -31,7 +31,7 @@ class CachingTraitTest extends TestCase {
      * @test
      *
      * @return void
-     * @throws Caching\Exceptions\CachingTraitMissingKeyException
+     * @throws Caching\Exception\CachingTraitMissingKeyException
      */
     public function clearCacheTest() {
         self::setCache(['test'], 'This is a test cache');
@@ -49,7 +49,7 @@ class CachingTraitTest extends TestCase {
     {
         self::setCache(['test'], 'This is a test cache');
         $this->assertTrue(self::hasCache(['test']));
-        $this->expectException(Caching\Exceptions\CachingTraitMissingKeyException::class);
+        $this->expectException(Caching\Exception\CachingTraitMissingKeyException::class);
         $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
         self::getCache(['key_not_here']);
 
@@ -61,12 +61,12 @@ class CachingTraitTest extends TestCase {
      * @test
      *
      * @return void
-     * @throws Caching\Exceptions\CachingTraitMissingKeyException
+     * @throws Caching\Exception\CachingTraitMissingKeyException
      */
     public function clearCacheFailTest() {
         self::setCache(['test'], 'This is a test cache');
         $this->assertTrue(self::hasCache(['test']));
-        $this->expectException(Caching\Exceptions\CachingTraitMissingKeyException::class);
+        $this->expectException(Caching\Exception\CachingTraitMissingKeyException::class);
         $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
         self::clearCache(['key_not_here']);
 
@@ -78,7 +78,7 @@ class CachingTraitTest extends TestCase {
      * @test
      *
      * @return void
-     * @throws Caching\Exceptions\CachingTraitMissingKeyException
+     * @throws Caching\Exception\CachingTraitMissingKeyException
      */
     public function setCacheChangeTest() {
         /* set a value to the ['test'] key */

@@ -1,6 +1,6 @@
 <?php
 
-namespace AxeTools\Traits\Caching\Exceptions;
+namespace AxeTools\Traits\Caching\Exception;
 
 /**
  * Parent Exception

@@ -1,8 +1,7 @@
 <?php
 
-namespace AxeTools\Traits\Caching\Exceptions;
+namespace AxeTools\Traits\Caching\Exception;
 
-use AxeTools\Traits\Caching\Exceptions\CachingTraitException;
 use Throwable;
 
 /**
