@@ -1,20 +1,31 @@
 <?php
 
-namespace AxeTools\cachingTrait\Test;
+namespace AxeTools\Traits\Test;
 
-use AxeTools\cachingTrait\cachingTrait;
-use AxeTools\cachingTrait\Exceptions\CachingTraitMissingKeyException;
+use AxeTools\Traits\Caching\CachingTrait;
+use AxeTools\Traits\Caching\Exceptions\CachingTraitMissingKeyException;
 use PHPUnit\Framework\TestCase;
 
-class CachingTraitTest extends TestCase
-{
-    use cachingTrait;
+class CachingTraitTest extends TestCase {
+    use CachingTrait;
+
+    /**
+     * Ensure that the class cache is cleared before every test case
+     *
+     * @return void
+     * @throws CachingTraitMissingKeyException
+     */
+    protected function setUp(): void {
+        self::clearCache();
+    }
 
     /**
      * @test
      * @dataProvider setCacheTestDataProvider
+     *
      * @param array<string> $key
-     * @param mixed $value
+     * @param mixed         $value
+     *
      * @return void
      * @throws CachingTraitMissingKeyException
      */
@@ -25,15 +36,51 @@ class CachingTraitTest extends TestCase
     }
 
     /**
+     * @test
+     * @return void
+     */
+    public function clearCacheTest() {
+        self::setCache(['test'], 'This is a test cache');
+        $this->assertTrue(self::hasCache(['test']));
+        self::clearCache();
+        $this->assertFalse(self::hasCache(['test']));
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    public function hasCacheFailTest(){
+        self::setCache(['test'], 'This is a test cache');
+        $this->assertTrue(self::hasCache(['test']));
+        $this->expectException(CachingTraitMissingKeyException::class);
+        $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
+        self::getCache(['key_not_here']);
+    }
+
+    /**
+     * @test
+     * @return void
+     * @throws CachingTraitMissingKeyException
+     */
+    public function clearCacheFailTest(){
+        self::setCache(['test'], 'This is a test cache');
+        $this->assertTrue(self::hasCache(['test']));
+        $this->expectException(CachingTraitMissingKeyException::class);
+        $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
+        self::clearCache(['key_not_here']);
+    }
+
+    /**
      * @return array<mixed>
      */
     public static function setCacheTestDataProvider(): array {
         return [
-            'null pass through' => [ ['test'], null ],
-            'int pass through' => [ ['test'], 1 ],
-            'string pass through' => [ ['test'], 'string' ],
-            'bool pass through true ' => [ ['test'], true ],
-            'boll pass through false' => [ ['test'], false ],
+            'null pass through' => [['test'], null],
+            'int pass through' => [['test'], 1],
+            'string pass through' => [['test'], 'string'],
+            'bool pass through true ' => [['test'], true],
+            'boll pass through false' => [['test'], false],
         ];
     }
 
