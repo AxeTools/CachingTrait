@@ -15,6 +15,12 @@
 >
 > In general this does not promote good design patters.  This is not a good package to include when creating a new project.  The power of this package is having the ability to drop it into heavy classes that are difficult to refactor.
 
+>
+> This package can greatly reduce execution times for classes that are instantiated in multiple locations that are heavy to create or have multiple database calls on instantiation.  Classes that contain data that is not expected to change in the lifetime of a request.  Sometimes it is not possible to pass these classes as a dependency when refactoring and an intermediary solution is needed.
+
+>
+> <b>WARNING:</b> When writing tests that involve caching classes, remember the static cache is not automatically reset between tests.  Care should be taken to ensure clean class caches at the start and end of each test case.
+
 This project uses [Semantic Versioning][].  The project currently does not have a version that can be used for below 
 php 7.0 however if someone out there has a need for a version to exist to support a lower version of php 
 please contact me it is very easy to port the code to anything down to php 5.4 (the introduction of Traits in the 
@@ -33,6 +39,28 @@ composer require axetools/cachingtrait
 ## Usage
 
 The CachingTrait can be used with any class and will expose several protected methods to be utilized by the class to access the static cache array.
+
+### Example
+```php
+<?php
+namespace test
+
+use AxeTools\Trait\Caching\CachingTrait;
+
+class HardToBuild {
+
+use CachingTrait;
+
+    /**
+     * @param array<string> $parameters Assumes that the parameters alone can uniquely recall the same object.
+     */
+    public static function create(array $parameters){
+        if(self::hasCache(parameters)) return self::getCache($parameters);
+        return new self($parameters);
+    }
+    
+}
+```
 
 ### setCache()
 

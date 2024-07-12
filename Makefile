@@ -1,10 +1,12 @@
 ###############################################################################
-#      _            _              _
-#   __| | _____   _| |_ ___   ___ | |___
-#  / _` |/ _ \ \ / / __/ _ \ / _ \| / __|
-# | (_| |  __/\ V /| || (_) | (_) | \__ \
-#  \__,_|\___| \_/  \__\___/ \___/|_|___/
+#     _             _____           _
+#    / \   __  ____|_   _|__   ___ | |___
+#   / _ \  \ \/ / _ \| |/ _ \ / _ \| / __|
+#  / ___ \  >  <  __/| | (_) | (_) | \__ \
+# /_/   \_\/_/\_\___||_|\___/ \___/|_|___/
 #
+# https://github.com/AxeTools
+# AxeTools/CachingTrait
 #
 ###############################################################################
 .DEFAULT_GOAL := default
@@ -12,47 +14,47 @@
 #
 # Bring up the dev containers
 #
-docker-up:
+up:
 	@echo "##### Bringing up Dev Containers #####"
 	@(docker compose up -d)
 
 #
 # Bring down the dev containers
 #
-docker-down:
+down:
 	@echo "##### Bringing down Dev Containers #####"
 	@(docker compose down)
 
 #
 # Execute a Bash terminal on the dev php container
 #
-docker-bash: docker-up
+bash: up
 	@echo "##### Dev php Container Bash Prompt #####"
 	@(docker compose exec php bash)
 
 #
 # Execute tests against the dev php container
 #
-docker-test: docker-up
+tests: up
 	@echo "##### Dev php Container Tests #####"
 	@(docker compose exec php composer tests)
 
 
 #
-# Build the production docker files
+# Install the composer assets
 #
-docker-install: docker-up
+install: up
 	@echo "##### Installing Composer Dependencies #####"
 	@(docker compose exec php composer install)
 
 #
-# Build the production docker files
+# Build the dev docker file
 #
-docker-build:
+build:
 	@echo "##### Building Production Containers #####"
 	@docker compose build php
 
 #
-# build and bring up the production containers
+# build and bring up the dev containers and install assets
 #
-default: docker-build docker-up
+default: build install

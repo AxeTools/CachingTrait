@@ -1,6 +1,6 @@
 {
     "name": "axetools/cachingtrait",
-    "description": "A PHP library to enable static caching on a class",
+    "description": "A PHP library to enable static caching trait on a class",
     "type": "library",
     "license": "MIT",
     "version": "0.0.1",
@@ -21,7 +21,7 @@
     "authors": [
         {
             "name": "Ryan W Howe",
-            "email": "ryanwhowe@gmail.com"
+            "email": "axetoolsphp@gmail.com"
         }
     ],
     "autoload-dev": {
@@ -44,9 +44,6 @@
         ]
     },
     "scripts-descriptions": {
-        "analyze": "Run All project static analysis scripts",
-        "phpstan": "Run PHPStan against the project code on level 8",
-        "psalm": "Run psalm against the project code",
         "phpunit": "Run PHPUnit tests",
         "tests": "Run the static analysis and unit tests"
     }

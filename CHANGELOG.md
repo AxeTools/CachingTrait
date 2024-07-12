@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- The 2.x branch will be added to support php ^8.0
 
 ## [1.0.0]
 
 ### Added
 
-- `Dockerfile` for development
-- `docker-compose.yml` for development
-- Initial Release 1.0.0 (#1)
+- Initial Release 1.0.0 ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- Support for php ^7.0
+- `CacheTrait::setCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- `CacheTrait::getCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- `CacheTrait::hasCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- `CacheTrait::generateKey()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
+- `CacheTrait::clearCache()` static method ([#1](https://github.com/AxeTools/CachingTrait/pull/1))
