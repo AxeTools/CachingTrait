@@ -3,7 +3,7 @@
     "description": "A PHP library to enable static caching trait on a class",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "keywords": [
         "cache",
         "caching",
@@ -30,20 +30,37 @@
         }
     },
     "require": {
-        "php": "^7.0"
+        "php": "^8.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "vimeo/psalm": "*"
     },
     "scripts": {
+        "analyze": [
+            "@phpstan",
+            "@psalm"
+        ],
+        "phpstan": [
+            "phpstan analyse src/ tests/ --no-progress --memory-limit=1G --level 8"
+        ],
+        "psalm": [
+            "psalm"
+        ],
         "phpunit": "phpunit --verbose --colors=always",
         "tests": [
+            "@phpstan",
+            "@psalm",
             "@phpunit"
         ]
     },
     "scripts-descriptions": {
+        "analyze": "Run All project static analysis scripts",
+        "phpstan": "Run PHPStan against the project code on level 8",
+        "psalm": "Run psalm against the project code",
         "phpunit": "Run PHPUnit tests",
         "tests": "Run the static analysis and unit tests"
     }

@@ -18,7 +18,7 @@ class CachingTraitTest extends TestCase {
      * @return void
      * @throws Caching\Exception\CachingTraitMissingKeyException
      */
-    public function setCacheTest(array $key, $value) {
+    public function setCacheTest(array $key, mixed $value) {
         self::setCache($key, $value);
         $this->assertTrue(self::hasCache($key));
         $this->assertEquals($value, self::getCache($key));
@@ -102,7 +102,7 @@ class CachingTraitTest extends TestCase {
     /**
      * @return array<mixed>
      */
-    public static function setCacheTestDataProvider() {
+    public static function setCacheTestDataProvider(): array {
         return [
             'null pass through' => [['test'], null],
             'int pass through' => [['test'], 1],

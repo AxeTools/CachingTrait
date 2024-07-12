@@ -24,7 +24,7 @@ trait CachingTrait {
     /**
      * @var array<string, mixed>
      */
-    protected static $_cache = [];
+    protected static array $_cache = [];
 
     /**
      * Add the data to the cache array under the key value
@@ -34,7 +34,7 @@ trait CachingTrait {
      *
      * @return void
      */
-    protected static function setCache(array $key, $data) {
+    protected static function setCache(array $key, mixed $data): void {
         self::$_cache[self::generateKey($key)] = $data;
     }
 
@@ -46,7 +46,7 @@ trait CachingTrait {
      * @return mixed
      * @throws Exception\CachingTraitMissingKeyException if provided key is not set in the cache array
      */
-    protected static function getCache(array $key) {
+    protected static function getCache(array $key): mixed {
         if (self::hasCache($key)) return self::$_cache[self::generateKey($key)];
         throw new Exception\CachingTraitMissingKeyException(self::generateKey($key));
     }
@@ -81,7 +81,7 @@ trait CachingTrait {
      * @return void
      * @throws Exception\CachingTraitMissingKeyException if provided key is not set in the cache array
      */
-    protected static function clearCache(array $key = null) {
+    protected static function clearCache(array $key = null): void {
         if(null === $key) {
             self::$_cache = [];
         } else {
