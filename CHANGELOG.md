@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning].
 
 - The 2.x branch will be added to support php ^8.0
 
+## 1.0.1 - 2024-07-29
+
+## Fixed
+
+- version number of `composer.json` corrected to reflect release version
+
+
 ## 1.0.0 - 2024-07-29
 
 ### Added
