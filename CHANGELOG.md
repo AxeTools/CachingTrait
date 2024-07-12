@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
+## [1.0.0]
+
 ### Added
 
 - `Dockerfile` for development
 - `docker-compose.yml` for development
-- Initial Beta Release (#1)
+- Initial Release 1.0.0 (#1)
