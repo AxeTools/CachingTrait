@@ -30,30 +30,16 @@
         }
     },
     "require": {
-        "php": "^8.0"
+        "php": "^7.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "phpstan/phpstan": "*",
-        "vimeo/psalm": "*"
+        "phpunit/phpunit": "*"
     },
     "scripts": {
-        "analyze": [
-            "@phpstan",
-            "@psalm"
-        ],
-        "phpstan": [
-            "phpstan analyse src/ tests/ --no-progress --memory-limit=1G --level 8"
-        ],
-        "psalm": [
-            "psalm"
-        ],
         "phpunit": "phpunit --verbose --colors=always",
         "tests": [
-            "@phpstan",
-            "@psalm",
             "@phpunit"
         ]
     },

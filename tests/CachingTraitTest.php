@@ -15,7 +15,7 @@ class CachingTraitTest extends TestCase {
      * @return void
      * @throws CachingTraitMissingKeyException
      */
-    protected function setUp(): void {
+    protected function setUp() {
         self::clearCache();
     }
 
@@ -38,6 +38,7 @@ class CachingTraitTest extends TestCase {
     /**
      * @test
      * @return void
+     * @throws CachingTraitMissingKeyException
      */
     public function clearCacheTest() {
         self::setCache(['test'], 'This is a test cache');

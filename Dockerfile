@@ -1,7 +1,8 @@
-FROM php:8.0-fpm-bullseye
+FROM php:7.0-fpm-stretch
+
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    unzip \
     zlib1g-dev \
     libxml2-dev \
     libzip-dev \
@@ -11,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     mysqli \
     opcache
 
-RUN yes | pecl install xdebug \
+RUN yes | pecl install xdebug-2.7.2 \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.discover_client_host=1" >> /usr/local/etc/php/conf.d/xdebug.ini \
