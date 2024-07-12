@@ -1,0 +1,50 @@
+{
+    "name": "axetools/cachingtrait",
+    "description": "A PHP library to enable static caching trait on a class",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.0.1",
+    "keywords": [
+        "cache",
+        "caching",
+        "trait",
+        "refactor",
+        "refactoring",
+        "class",
+        "classes"
+    ],
+    "autoload": {
+        "psr-4": {
+            "AxeTools\\Traits\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ryan W Howe",
+            "email": "axetoolsphp@gmail.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "AxeTools\\Traits\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "scripts": {
+        "phpunit": "phpunit --verbose --colors=always",
+        "tests": [
+            "@phpunit"
+        ]
+    },
+    "scripts-descriptions": {
+        "phpunit": "Run PHPUnit tests",
+        "tests": "Run the static analysis and unit tests"
+    }
+}
