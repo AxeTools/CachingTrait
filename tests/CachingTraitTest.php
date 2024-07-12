@@ -10,16 +10,6 @@ class CachingTraitTest extends TestCase {
     use CachingTrait;
 
     /**
-     * Ensure that the class cache is cleared before every test case
-     *
-     * @return void
-     * @throws CachingTraitMissingKeyException
-     */
-    protected function setUp() {
-        self::clearCache();
-    }
-
-    /**
      * @test
      * @dataProvider setCacheTestDataProvider
      *
@@ -33,6 +23,7 @@ class CachingTraitTest extends TestCase {
         self::setCache($key, $value);
         $this->assertTrue(self::hasCache($key));
         $this->assertEquals($value, self::getCache($key));
+        self::clearCache();
     }
 
     /**
@@ -57,6 +48,7 @@ class CachingTraitTest extends TestCase {
         $this->expectException(CachingTraitMissingKeyException::class);
         $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
         self::getCache(['key_not_here']);
+        self::clearCache();
     }
 
     /**
@@ -70,6 +62,7 @@ class CachingTraitTest extends TestCase {
         $this->expectException(CachingTraitMissingKeyException::class);
         $this->expectExceptionMessage("The cache key 'key_not_here' was not found in the cache");
         self::clearCache(['key_not_here']);
+        self::clearCache();
     }
 
     /**
