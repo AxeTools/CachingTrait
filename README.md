@@ -21,11 +21,7 @@
 >
 > <b>WARNING:</b> When writing tests that involve caching classes, remember the static cache is not automatically reset between tests.  Care should be taken to ensure clean class caches at the start and end of each test case.
 
-This project uses [Semantic Versioning][].  The project currently does not have a version that can be used for below 
-php 7.0 however if someone out there has a need for a version to exist to support a lower version of php 
-please contact me it is very easy to port the code to anything down to php 5.4 (the introduction of Traits in the 
-language) and it would be easy to support.  If you need this functionality in a version of php before that you would 
-have to create a base class from the trait file in the code.
+This project uses [Semantic Versioning][].
 
 ## Installation
 

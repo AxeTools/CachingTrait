@@ -44,6 +44,7 @@ class CachingTraitTest extends TestCase {
      * @test
      *
      * @return void
+     * @throws Caching\Exception\CachingTraitMissingKeyException
      */
     public function hasCacheFailTest()
     {

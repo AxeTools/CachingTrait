@@ -58,7 +58,7 @@ trait CachingTrait {
      *
      * @return bool
      */
-    protected static function hasCache(array $key): bool {
+    protected static function hasCache(array $key) {
         return array_key_exists(self::generateKey($key), self::$_cache);
     }
 
@@ -69,7 +69,7 @@ trait CachingTrait {
      *
      * @return string
      */
-    private static function generateKey(array $key_items): string {
+    private static function generateKey(array $key_items) {
         return implode(':|:', $key_items);
     }
 
