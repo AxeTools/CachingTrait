@@ -7,7 +7,7 @@
 <p align="center">
     <a href="https://github.com/AxeTools/CachingTrait"><img src="https://img.shields.io/badge/source-AxeTools/cachingTrait-blue.svg?style=flat-square" alt="Source Code"></a>
     <a href="https://php.net"><img src="https://img.shields.io/packagist/php-v/AxeTools/CachingTrait.svg?style=flat-square&colorB=%238892BF" alt="PHP Programming Language"></a>
-    <a href="https://github.com/AxeTools/CachingTrait/blob/1.x/LICENSE"><img src="https://img.shields.io/packagist/l/AxeTools/CachingTrait.svg?style=flat-square&colorB=darkcyan" alt="Read License"></a>
+    <a href="https://github.com/AxeTools/CachingTrait/blob/2.x/LICENSE"><img src="https://img.shields.io/packagist/l/AxeTools/CachingTrait.svg?style=flat-square&colorB=darkcyan" alt="Read License"></a>
     <a href="https://github.com/AxeTools/CachingTrait/actions/workflows/php.yml"><img src="https://img.shields.io/github/actions/workflow/status/AxeTools/CachingTrait/php.yml?branch=1.x&logo=github&style=flat-square" alt="Build Status"></a>
 </p>
 
@@ -21,11 +21,7 @@
 >
 > <b>WARNING:</b> When writing tests that involve caching classes, remember the static cache is not automatically reset between tests.  Care should be taken to ensure clean class caches at the start and end of each test case.
 
-This project uses [Semantic Versioning][].  The project currently does not have a version that can be used for below 
-php 7.0 however if someone out there has a need for a version to exist to support a lower version of php 
-please contact me it is very easy to port the code to anything down to php 5.4 (the introduction of Traits in the 
-language) and it would be easy to support.  If you need this functionality in a version of php before that you would 
-have to create a base class from the trait file in the code.
+This project uses [Semantic Versioning][].
 
 ## Installation
 
