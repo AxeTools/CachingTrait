@@ -1,4 +1,4 @@
-FROM php:7.0-fpm-stretch
+FROM php:7.1-fpm-stretch
 
 RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 
