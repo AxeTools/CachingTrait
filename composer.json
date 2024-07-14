@@ -3,7 +3,6 @@
     "description": "A PHP library to enable static caching trait on a class",
     "type": "library",
     "license": "MIT",
-    "version": "2.0.0",
     "keywords": [
         "cache",
         "caching",
