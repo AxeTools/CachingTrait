@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning].
 
 ### Added
 
-- Support for php ^8.0
+- Testing support for all php 7 releases
 
 ## 1.0.0 - 2024-07-29
 
